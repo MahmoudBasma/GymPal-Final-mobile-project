@@ -1,0 +1,30 @@
+Databases:
+
+Customer
+C_ID Name StartingDate GymName
+
+Sessions:
+SesssionID StartTime EndTime DaysofTheWeek price trainerID
+
+Trainer:
+TrainerID Name ActiveHours NbTrainees Speciality
+
+Qualifications:
+Q_ID TrainerID Degree/certificate Year source(certifier)
+
+Transactions:
+TransactionID Type Date Completed amount($)
+
+Packages:
+PackageID Duration Offer(JSON) totalNbOfSessions price
+
+Customer-package bridge table:
+CustomerID packageID CompletedSessions
+
+User Login Data:
+username password persmission 
+
+Fees:
+feeID TrainerID date customer sessionType amount
+
+

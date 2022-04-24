@@ -1,0 +1,25 @@
+APIs:
+
+1.LoginAPI:
+fetch the userData 
+
+2.packageAPI
+fetch the current package and the percentage completed 
+
+3.TransactionAPI 
+fetches the customers latest and pending transactions 
+
+4.CalendarAPI 
+fetches the timings of the sessions
+
+5.TrainerAPI 
+fetches the trainer name, training hours, customer trained from the user as well as the trainer qualifications 
+
+6.profile edit API 
+allows the trainer to change their speciality and add/remove their certifications
+
+7.Fees API 
+fetches the trainer monthly fees with all the details 
+
+8.CustomerAPI 
+pending task

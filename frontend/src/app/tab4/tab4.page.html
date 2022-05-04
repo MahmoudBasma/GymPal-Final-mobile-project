@@ -20,17 +20,33 @@
       <ion-label>{{p.Speciality}}</ion-label>
       <ion-icon name="accessibility" slot="end"></ion-icon>
     </ion-item>
-  
-    <ion-card-content>
-      Thank you for your efforts and thank you for making this gym a great place.
-      <br>
-      You have trained {{p.NbOfTrainees}} clients so far
+    <ion-card>
+      <ion-card-content>
+      <ion-card-subtitle>Thank you for your efforts and thank you for making this gym a great place.</ion-card-subtitle>
       <br> 
-      You have provided {{p.ActiveHours}} hours of training with us
+      <ion-card-title>
+        <ion-icon name="people-circle-outline"></ion-icon> 
+        {{p.NbOfTrainees}} clients trained
+      </ion-card-title>
+      <br> 
+      <ion-card-title>
+        <ion-icon name="hourglass-outline"></ion-icon>
+        {{p.ActiveHours}} hours of training
+      </ion-card-title>
     </ion-card-content>
+    </ion-card>
   </ion-card>
 
+  <ion-card class="centered"> 
+    <ion-card-title class="spaced">
+      <ion-icon name="barbell-outline"></ion-icon>
 
+      <span class="spaced">Qualifications</span>
+
+      <ion-icon name="school-outline"></ion-icon>
+    </ion-card-title>
+  </ion-card>
+  
   <ion-card *ngFor="let q of qualifications">
     <ion-card-header>
       <ion-card-subtitle>{{q.Year}}</ion-card-subtitle>

@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import { Component , OnInit, Input } from '@angular/core';
 import { computeStackId } from '@ionic/angular/directives/navigation/stack-utils';
 import { ProfileService, Profile } from '../apis/profile.service';
 import { QualificationsService , Qualification} from '../apis/qualifications.service';
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-tab4',
   templateUrl: 'tab4.page.html',
   styleUrls: ['tab4.page.scss']
 })
-export class Tab4Page {
+export class Tab4Page implements OnInit {
   profile: Profile[];
   qualifications: Qualification[];
-
-  constructor(private Pservice: ProfileService, private Qservice: QualificationsService) {}
+  @Input() model_title: string;
+  constructor(private Pservice: ProfileService, private Qservice: QualificationsService
+    ,private modalController: ModalController) {}
 
   ngOnInit(){
     this.Pservice.getFullProfile().subscribe(response => {
@@ -22,5 +24,9 @@ export class Tab4Page {
       this.qualifications = response;
       console.log(this.qualifications);
     })
+  }
+  async closeModel() {
+    const close: string = "Modal Removed";
+    await this.modalController.dismiss(close);
   }
 }

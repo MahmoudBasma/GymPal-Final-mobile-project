@@ -14,6 +14,6 @@ import { PopoverComponent } from '../popover/popover.component';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(pop: PopoverComponent) {}
 
 }

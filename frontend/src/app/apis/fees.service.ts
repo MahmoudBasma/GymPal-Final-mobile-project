@@ -11,6 +11,12 @@ export interface Fee{
 
 }
 
+export interface monthlyFee{
+  year: string;
+  month: string, 
+  total: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,5 +26,9 @@ export class FeesService {
 
   getAllFees(){
     return this.http.get<[Fee]>(this.url+"fees.php?user_id=1")
+  }
+
+  getMonthlyFees(){
+    return this.http.get<[monthlyFee]>(this.url+"monthlyFees.php?user_id=1")
   }
 }

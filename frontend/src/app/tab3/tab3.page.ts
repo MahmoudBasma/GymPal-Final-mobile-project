@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Fee, FeesService } from '../apis/fees.service';
+import { Fee, FeesService, monthlyFee } from '../apis/fees.service';
 import { ViewTotalFeesPage } from '../pages/view-total-fees/view-total-fees.page';
 
 @Component({
@@ -14,6 +14,7 @@ export class Tab3Page {
 
   fees: Fee[];
   total: number[];
+  monthly: monthlyFee[];
   
   constructor(private Fservice:FeesService, 
     public modalCtrl: ModalController) {}
@@ -24,12 +25,19 @@ export class Tab3Page {
       console.log(this.fees);
       this.total= [this.fees[this.fees.length-1]["SUM(Amount)"]];
     })
+    
+    this.Fservice.getMonthlyFees().subscribe(response => {
+      this.monthly = response;
+    })
   }
+
   async initModal() {
     const modal = await this.modalCtrl.create({
       component: ViewTotalFeesPage,
       componentProps: {
-        'fee':this.fees[this.fees.length-1]["SUM(Amount)"] 
+        'fee':this.monthly[0]["total"],
+        'month': this.monthly[0]["month"], 
+        'year':  this.monthly[0]["year"]
       }
     });
 

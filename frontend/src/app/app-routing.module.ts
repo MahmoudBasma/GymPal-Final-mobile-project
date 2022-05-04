@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'edit-profile-pop',
+    loadChildren: () => import('./pages/edit-profile-pop/edit-profile-pop.module').then( m => m.EditProfilePopPageModule)
   }
 ];
 @NgModule({

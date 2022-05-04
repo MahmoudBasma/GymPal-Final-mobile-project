@@ -1,16 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Ionic Modal Popover Demo</ion-title>
+    <ion-title>Edit Profile Form</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-item>
+    <ion-label position="floating" >Update Specialty</ion-label>
+    <ion-input placeholder="Specialty" type="text" 
+    name="Specialty" [(ngModel)]="spec"></ion-input>
+  
+    <ion-button color="danger" type="submit" (click)="update()">
+      Update
+    </ion-button>
+  </ion-item>
+  </ion-card>
+<!--This is a comment-->
+  <ion-card>  
+    <ion-item>
+      <ion-label position="floating">Add Qualification</ion-label>
+      <ion-input placeholder="Certificate/Degree"
+       name="certificate" [(ngModel)]="certificate"></ion-input>
+      
+       <ion-input placeholder="institution/certifier" 
+      name="party" [(ngModel)]="party"></ion-input>
+      
+      <ion-input placeholder="year" type="number" 
+      name="year" [(ngModel)]="year"></ion-input>
+      
+      <ion-button color="danger" name="submit" (click)="add()">
+        Add
+      </ion-button>
+    </ion-item>
+
+</ion-card>
   <ion-grid>
-    <ion-row>
-      <ion-col text-center>
-        Total Amount : {{ fee }} $
-      </ion-col>
-    </ion-row>
     <ion-row>
       <ion-col text-center>
         <ion-button (click)="close()">Close</ion-button>

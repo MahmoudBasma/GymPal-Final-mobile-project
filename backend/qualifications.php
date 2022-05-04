@@ -1,5 +1,6 @@
 qualifications.php
 <?php
+header('Access-Control-Allow-Origin: *');
 
 include("db_info.php");
 

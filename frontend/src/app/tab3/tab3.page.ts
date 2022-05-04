@@ -9,6 +9,7 @@ import { Fee, FeesService } from '../apis/fees.service';
 export class Tab3Page {
 
   fees: Fee[];
+  total = 0;
 
   constructor(private Fservice:FeesService) {}
 
@@ -16,8 +17,11 @@ export class Tab3Page {
     this.Fservice.getAllFees().subscribe(response => {
       this.fees = response;
       console.log(this.fees);
+      this.total=this.fees[this.fees.length-1]["SUM(Amount)"];
+      console.log("total fees "+this.fees[this.fees.length-1]["SUM(Amount)"]);
     })
   }
+  
   
 
 }

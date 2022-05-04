@@ -22,12 +22,45 @@
   </ion-item>
 </ion-item>
 
-  <ion-list *ngFor="let fee of fees">
-    <ion-item>
-      {{fee.Customer}}
-    </ion-item>
-
-  </ion-list>
+<ion-grid id="header">
+  <ion-row>
+    <ion-col>
+      <div>Name</div>
+    </ion-col>
+    <ion-col>
+      <div>Date</div>
+    </ion-col>
+    <ion-col>
+      <div>Session Type</div>
+    </ion-col>
+    <ion-col>
+      <div>Fees ($)</div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  <ion-grid *ngFor="let fee of fees">
+    <ion-row>
+      <ion-col>
+        <div>{{fee.Customer}}</div>
+      </ion-col>
+      <ion-col>
+        <div>{{fee.Date}}</div>
+      </ion-col>
+      <ion-col>
+        <div>{{fee.SessionType}}</div>
+      </ion-col>
+      <ion-col>
+        <div>{{fee.Amount}}</div>
+      </ion-col>
+      <ion-item ngIf="fee.SUM(Amount)">
+        <ion-icon name="money"></ion-icon>
+        <ion-label>Total Amount:</ion-label>
+        <ion-label>{{fee.SUM(Amount)}}</ion-label>
+      </ion-item>
+    </ion-row>
+    
+  </ion-grid>
+  
 
   
 

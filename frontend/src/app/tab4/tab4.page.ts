@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { computeStackId } from '@ionic/angular/directives/navigation/stack-utils';
 import { ProfileService, Profile } from '../apis/profile.service';
-
+import { QualificationsService , Qualification} from '../apis/qualifications.service';
 @Component({
   selector: 'app-tab4',
   templateUrl: 'tab4.page.html',
@@ -9,12 +9,18 @@ import { ProfileService, Profile } from '../apis/profile.service';
 })
 export class Tab4Page {
   profile: Profile[];
-  constructor(private service: ProfileService) {}
+  qualifications: Qualification[];
+
+  constructor(private Pservice: ProfileService, private Qservice: QualificationsService) {}
 
   ngOnInit(){
-    this.service.getFullProfile().subscribe(response => {
+    this.Pservice.getFullProfile().subscribe(response => {
       this.profile = response;
       console.log(this.profile);
+    })
+    this.Qservice.getAllQualifications().subscribe(response => {
+      this.qualifications = response;
+      console.log(this.qualifications);
     })
   }
 }

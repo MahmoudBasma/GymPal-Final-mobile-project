@@ -22,7 +22,7 @@ Customer-package bridge table:
 CustomerID packageID CompletedSessions
 
 User Login Data:
-username password persmission userId
+username password persmission userId 
 
 Fees:
 feeID TrainerID date customer sessionType amount

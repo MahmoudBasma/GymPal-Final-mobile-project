@@ -1,5 +1,4 @@
 import { Component, OnInit , Input} from '@angular/core';
-import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -9,7 +8,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class EditProfilePopPage implements OnInit {
 
-  constructor(private modalCtr: ModalController, private router: Router) { }
+  constructor(private modalCtr: ModalController) { }
 
   ngOnInit() {
   }

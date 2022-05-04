@@ -9,19 +9,15 @@ import { Fee, FeesService } from '../apis/fees.service';
 export class Tab3Page {
 
   fees: Fee[];
-  total = 0;
-
+  total: number[];
+  
   constructor(private Fservice:FeesService) {}
 
   ngOnInit(){
     this.Fservice.getAllFees().subscribe(response => {
       this.fees = response;
       console.log(this.fees);
-      this.total=this.fees[this.fees.length-1]["SUM(Amount)"];
-      console.log("total fees "+this.fees[this.fees.length-1]["SUM(Amount)"]);
+      this.total= [this.fees[this.fees.length-1]["SUM(Amount)"]];
     })
   }
-  
-  
-
 }

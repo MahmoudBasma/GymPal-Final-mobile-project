@@ -7,20 +7,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item>
+
+  //Needs Backend 
   <ion-item>
     <ion-searchbar showCancelButton="never" slot="start"></ion-searchbar>
   </ion-item>
 
-  <ion-item>
-    <ion-icon name="filter"></ion-icon>
-    <ion-select value="">
-      <ion-select-option value="name">Name</ion-select-option>
-      <ion-select-option value="session">Session Type</ion-select-option>
-      <ion-select-option value="month">Month</ion-select-option>
-    </ion-select>
-  </ion-item>
-</ion-item>
 
 <ion-grid id="header">
   <ion-row>
@@ -52,15 +44,13 @@
       <ion-col>
         <div>{{fee.Amount}}</div>
       </ion-col>
-      <ion-item ngIf="fee.SUM(Amount)">
-        <ion-icon name="money"></ion-icon>
-        <ion-label>Total Amount:</ion-label>
-        <ion-label>{{fee.SUM(Amount)}}</ion-label>
-      </ion-item>
     </ion-row>
-    
   </ion-grid>
-  
+
+  <ion-item *ngFor="let t of total">
+    <ion-label slot="start">Total Fees:</ion-label>
+    <ion-label slot="end">{{t}} $</ion-label>
+  </ion-item>
 
   
 

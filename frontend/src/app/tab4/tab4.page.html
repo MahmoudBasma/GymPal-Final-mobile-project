@@ -12,10 +12,11 @@
     <ion-item>
       <ion-icon name="person" slot="start"></ion-icon>
       <ion-label>{{p.Name}}</ion-label>
-      <ion-button fill="outline" slot="end" (click)="openModal()">Edit</ion-button>
+      <ion-button fill="outline" slot="end" (click)="initModal()" >Edit</ion-button>
+      <p *ngIf="modalDataResponse">{{modalDataResponse}}</p>
     </ion-item>
     <ion-item>
-      <ion-label slot="end">Specialty</ion-label>
+      <ion-label slot="start">Specialty</ion-label>
       <ion-label>{{p.Speciality}}</ion-label>
       <ion-icon name="accessibility" slot="end"></ion-icon>
     </ion-item>
@@ -42,17 +43,5 @@
   </ion-card>
   </div>
   
-  <ion-grid>
-    <ion-row>
-      <ion-col text-center>
-        Model Title : {{ model_title }}
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center>
-        <ion-button (click)="closeModel()">Close</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  
+
 </ion-content>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-edit-profile-pop',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProfilePopPage implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtr: ModalController, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  async close() {
+    this.modalCtr.dismiss();
   }
 
 }

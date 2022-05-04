@@ -7,7 +7,7 @@ Sessions:
 SesssionID StartTime EndTime DaysofTheWeek price trainerID
 
 Trainer:
-TrainerID Name ActiveHours NbTrainees Speciality
+TrainerID Name ActiveHours(JSON) NbTrainees Speciality
 
 Qualifications:
 Q_ID TrainerID Degree/certificate Year source(certifier)

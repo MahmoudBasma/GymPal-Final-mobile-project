@@ -21,4 +21,9 @@ export class QualificationsService {
     //ID bug needs fixing 
     return this.http.get<[Qualification]>(this.url+"qualifications.php?user_id=1")
   }
+
+  addQualification(q:Qualification ){
+    console.log(q);
+    return this.http.put(this.url+"addQualification.php", JSON.stringify(q));
+  }
 }

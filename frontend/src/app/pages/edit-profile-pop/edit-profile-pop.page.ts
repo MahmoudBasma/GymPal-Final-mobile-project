@@ -1,6 +1,7 @@
 import { Component, OnInit , Input} from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import {AnyForUntypedForms, NgForm} from '@angular/forms';
+import { Qualification, QualificationsService } from 'src/app/apis/qualifications.service';
 
 @Component({
   selector: 'app-edit-profile-pop',
@@ -11,12 +12,17 @@ import {AnyForUntypedForms, NgForm} from '@angular/forms';
 
 export class EditProfilePopPage implements OnInit {
 
+  id: any;
   spec: any;
   certificate: any;
   year:any;
-  party:any;
+  source:any;
+  updateJson:any;
+  addJson: any;
+  qualification: Qualification;
 
-  constructor(private modalCtr: ModalController) { }
+  constructor(private modalCtr: ModalController, 
+    private Qservice:QualificationsService) { }
 
   ngOnInit() {
   }
@@ -24,9 +30,21 @@ export class EditProfilePopPage implements OnInit {
   update(){
     console.log(this.spec);
   }
-
+  
   add(){
+    this.id = 1;
     console.log(this.year);
+    this.qualification={
+      "Q_id": null,
+      "Year":this.year,
+      "source": this.source, 
+      "TrainerID": this.id, 
+      "certificate": this.certificate
+    }
+   
+
+    this.Qservice.addQualification(this.qualification);
+
   }
 
   async close() {

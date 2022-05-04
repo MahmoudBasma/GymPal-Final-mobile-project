@@ -33,7 +33,6 @@ export class Tab4Page {
     const modal = await this.modalCtrl.create({
       component: EditProfilePopPage,
       componentProps: {
-        'name': 'The Winter Soldier'
       }
     });
 

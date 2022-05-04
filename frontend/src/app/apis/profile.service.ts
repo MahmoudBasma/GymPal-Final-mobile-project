@@ -2,7 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 export interface Profile{
   id : string, 
-  name: string
+  name: string, 
+  hours: string, 
+  nbOfTrainees: string, 
+  specialty: string;
+
 }
 
 @Injectable({

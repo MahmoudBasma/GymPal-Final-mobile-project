@@ -2,7 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface Qualification{
-  Q_id:string
+  Q_id:string,
+  TrainerID:string, 
+  certificate: string,
+  Year:string,
+  source:string;
+
 }
 @Injectable({
   providedIn: 'root'
@@ -14,6 +19,6 @@ export class QualificationsService {
 
   getAllQualifications(){
     //ID bug needs fixing 
-    return this.http.get<[Qualification]>(this.url+"qualification.php?user_id=1")
+    return this.http.get<[Qualification]>(this.url+"qualifications.php?user_id=1")
   }
 }

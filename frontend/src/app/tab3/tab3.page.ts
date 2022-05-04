@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Fee, FeesService } from '../apis/fees.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  fees: Fee[];
+
+  constructor(private Fservice:FeesService) {}
+
+  ngOnInit(){
+    this.Fservice.getAllFees().subscribe(response => {
+      this.fees = response;
+      console.log(this.fees);
+    })
+  }
+  
 
 }

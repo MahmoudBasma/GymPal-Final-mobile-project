@@ -26,5 +26,3 @@ username password persmission userId
 
 Fees:
 feeID TrainerID date customer sessionType amount
-
-

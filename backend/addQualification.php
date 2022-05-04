@@ -4,10 +4,10 @@ include("db_info.php");
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-$certificate = $data->certificate;
-$source = $data->source;
-$year = $data->Year;
-$id = $data->TrainerID;
+$certificate = $data['certificate'];
+$source = $data['source'];
+$year = $data['Year'];
+$id = $data['TrainerID'];
 
 $query = $mysqli->prepare(
     "INSERT INTO qualifications (QualificationID, TrainerID, Certificate, Year, source) 

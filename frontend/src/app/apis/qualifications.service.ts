@@ -24,6 +24,6 @@ export class QualificationsService {
 
   addQualification(q:Qualification ){
     console.log(q);
-    return this.http.put(this.url+"addQualification.php", JSON.stringify(q));
+    return this.http.post(this.url+"addQualification.php", JSON.stringify(q));
   }
 }

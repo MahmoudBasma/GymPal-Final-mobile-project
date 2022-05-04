@@ -41,9 +41,12 @@ export class EditProfilePopPage implements OnInit {
       "TrainerID": this.id, 
       "certificate": this.certificate
     }
+    console.log(this.qualification);
    
 
-    this.Qservice.addQualification(this.qualification);
+    this.Qservice.addQualification(this.qualification).subscribe(response =>{
+      console.log(response);
+    });
 
   }
 

@@ -14,6 +14,6 @@ export class QuotesService {
   constructor(private http:HttpClient) { }
   
   getRandomQuote(){
-    return this.http.get<[Quote]>("https://motivational-quote-api.herokuapp.com/quotes/random")
+    return this.http.get<Quote>("https://motivational-quote-api.herokuapp.com/quotes/random")
   }
 }

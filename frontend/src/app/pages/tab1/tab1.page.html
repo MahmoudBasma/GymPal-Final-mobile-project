@@ -1,17 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+  <ion-card-title class="centered">
+    {{greeting}}
+  </ion-card-title>
+  <ion-label>Today's motivational quote:<br> </ion-label>
+  <ion-card-subtitle>{{quoteOfToday['person']}} once said:</ion-card-subtitle>
+    <ion-card-titile><q>{{quoteOfToday['quote']}}</q></ion-card-titile>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+</ion-card>
+
 </ion-content>

@@ -1,20 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PopoverPageRoutingModule } from './popover-routing.module';
+import { ModalPage } from './modal.page';
 
-import { PopoverPage } from './popover.page';
+const routes: Routes = [
+  {
+    path: '',
+    component: ModalPage
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PopoverPageRoutingModule
+    RouterModule.forChild(routes),
+ 
   ],
-  declarations: [PopoverPage]
+  declarations: [ModalPage]
 })
-export class PopoverPageModule {}
+export class ModalPageModule {}

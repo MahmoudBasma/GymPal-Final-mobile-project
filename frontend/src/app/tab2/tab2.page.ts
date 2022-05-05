@@ -5,7 +5,6 @@ import { formatDate } from '@angular/common';
 import { Alert } from 'selenium-webdriver';
 import { AlertController } from '@ionic/angular';
 import { PopoverController } from '@ionic/angular';
-import { PopoverComponent } from '../popover/popover.component';
 
 @Component({
   selector: 'app-tab2',
@@ -14,6 +13,6 @@ import { PopoverComponent } from '../popover/popover.component';
 })
 export class Tab2Page {
 
-  constructor(pop: PopoverComponent) {}
+  constructor() {}
 
 }

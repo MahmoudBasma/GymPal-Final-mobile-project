@@ -27,8 +27,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/attendance-form/attendance-form.module').then( m => m.AttendanceFormPageModule)
   },
   {
-    path: 'popover',
-    loadChildren: () => import('./pages/popover/popover.module').then( m => m.PopoverPageModule)
+    path: 'modal', 
+    loadChildren: () => import('./pages/modal/modal.module').then( m => m.ModalPageModule)
+  },
+  {
+    path: 'reminder', 
+    loadChildren: () => import('./pages/reminder/reminder.module').then( m => m.ReminderPageModule)
   }
 ];
 @NgModule({

@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>attendance</ion-title>
+    <ion-title>Attendance Form</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+<!--This is a comment-->
+  <ion-card >  
+          <ion-item class="centered">
+            <ion-label>Customer</ion-label>
+            <ion-select [(ngModel)]="selectedCustomer" (ionChange)="customerSelected()" required>
+              <ion-select-option *ngFor="let customer of customers" [value]="customer" >{{customer.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item class="centered">
+            <ion-label>Session Type</ion-label>
+            <ion-select [(ngModel)]="selectedType" (ionChange)="typeSelected()" required>
+              <ion-select-option *ngFor="let type of types" [value]="type" >{{type}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+</ion-card>
+<ion-grid class="centered">
+  <ion-row>
+    <ion-col text-center>
+      <ion-button (click)="close()">Close</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button text-center color="danger" (click)="markAttendance()">
+        take Attendance
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
+
+  

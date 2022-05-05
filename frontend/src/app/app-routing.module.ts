@@ -23,10 +23,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/view-total-fees/view-total-fees.module').then( m => m.ViewTotalFeesPageModule)
   },
   {
-    path: 'attendance-form',
-    loadChildren: () => import('./pages/attendance-form/attendance-form.module').then( m => m.AttendanceFormPageModule)
-  },
-  {
     path: 'modal', 
     loadChildren: () => import('./pages/modal/modal.module').then( m => m.ModalPageModule)
   },

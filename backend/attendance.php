@@ -8,7 +8,7 @@ $date = $data['date'];
 $customer = $data['customer'];
 $type = $data['type'];
 $amount = $data['amount'];
-$id = $data['TrainerID'];
+$id = $data['id'];
 
 $query = $mysqli->prepare(
     "INSERT INTO `fees` (`feeID`, `TrainerID`, `Date`, `Customer`, `SessionType`, `Amount`)

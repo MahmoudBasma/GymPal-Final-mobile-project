@@ -7,14 +7,21 @@ import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
+import { NgCalendarModule  } from 'ionic2-calendar';
+import { CalModalPageModule } from '../pages/cal-modal/cal-modal.module';
 
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+registerLocaleData(localeDe);
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    NgCalendarModule,
+    CalModalPageModule
   ],
   declarations: [Tab2Page]
 })

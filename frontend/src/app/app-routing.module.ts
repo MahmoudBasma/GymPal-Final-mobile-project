@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'reminder', 
     loadChildren: () => import('./pages/reminder/reminder.module').then( m => m.ReminderPageModule)
+  },
+  {
+    path: 'cal-modal',
+    loadChildren: () => import('./pages/cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
   }
 ];
 @NgModule({

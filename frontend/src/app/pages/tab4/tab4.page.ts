@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { computeStackId } from '@ionic/angular/directives/navigation/stack-utils';
-import { ProfileService, Profile } from '../apis/profile.service';
-import { QualificationsService , Qualification} from '../apis/qualifications.service';
+import { QualificationsService , Qualification} from 'src/app/apis/qualifications.service';
 import { ModalController } from '@ionic/angular';
-import { EditProfilePopPage } from '../pages/edit-profile-pop/edit-profile-pop.page';
+import { EditProfilePopPage } from '../edit-profile-pop/edit-profile-pop.page';
+import { ProfileService, Profile } from 'src/app/apis/profile.service';
 @Component({
   selector: 'app-tab4',
   templateUrl: 'tab4.page.html',

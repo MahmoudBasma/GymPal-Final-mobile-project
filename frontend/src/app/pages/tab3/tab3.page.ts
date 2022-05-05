@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Fee, FeesService, monthlyFee } from '../apis/fees.service';
-import { ViewTotalFeesPage } from '../pages/view-total-fees/view-total-fees.page';
+import { Fee, FeesService, monthlyFee } from 'src/app//apis/fees.service';
+import { ViewTotalFeesPage } from '../view-total-fees/view-total-fees.page';
 
 @Component({
   selector: 'app-tab3',

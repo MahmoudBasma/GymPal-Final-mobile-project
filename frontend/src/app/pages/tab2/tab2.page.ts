@@ -5,7 +5,7 @@ import { formatDate } from '@angular/common';
 import { Alert } from 'selenium-webdriver';
 import { AlertController } from '@ionic/angular';
 import { PopoverController } from '@ionic/angular';
-import { PopoverComponent } from '../pages/popover/popover.component';
+import { PopoverComponent } from '../popover/popover.component';
 import { CalendarComponent } from 'ionic2-calendar';
 
 @Component({

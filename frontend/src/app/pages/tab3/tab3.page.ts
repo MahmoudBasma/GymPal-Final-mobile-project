@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Fee, FeesService, monthlyFee } from 'src/app//apis/fees.service';
+import { AttendancePage } from '../attendance/attendance.page';
 import { ViewTotalFeesPage } from '../view-total-fees/view-total-fees.page';
 
 @Component({
@@ -38,6 +39,23 @@ export class Tab3Page {
         'fee':this.monthly[0]["total"],
         'month': this.monthly[0]["month"], 
         'year':  this.monthly[0]["year"]
+      }
+    });
+
+    modal.onDidDismiss().then((modalDataResponse) => {
+      if (modalDataResponse !== null) {
+        this.modalDataResponse = modalDataResponse.data;
+        console.log('Modal Sent Data : '+ modalDataResponse.data);
+      }
+    });
+
+    return await modal.present();
+  }
+
+  async initAttendanceModal() {
+    const modal = await this.modalCtrl.create({
+      component: AttendancePage,
+      componentProps: {
       }
     });
 

@@ -17,6 +17,6 @@ export class CustomersService {
   constructor(private http:HttpClient) { }
 
   getTrainerCustomers(){
-    return this.http.get<[Customer]>(this.url+"getCustomers.php?user_id"+this.id);
+    return this.http.get<[Customer]>(this.url+"getCustomers.php?user_id="+this.id);
   }
 }

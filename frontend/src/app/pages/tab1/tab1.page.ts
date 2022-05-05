@@ -15,6 +15,8 @@ export class Tab1Page {
   quoteOfToday: Quote;
   hr = new Date().getHours();
   greeting: string;
+  person: any;
+  quote: any;
   
   setGreeting(){
     console.log(this.hr);
@@ -31,11 +33,15 @@ export class Tab1Page {
       this.greeting = "Good Evening";
     }
   }
+  
   constructor(private Qservice:QuotesService) {}
 
   ngOnInit(){
     this.Qservice.getRandomQuote().subscribe(response => {
       this.quoteOfToday = response;
+      this.quote = this.quoteOfToday['quote'];
+      this.person = this.quoteOfToday['person'];
+
       console.log(response);
     })
     this.setGreeting();
